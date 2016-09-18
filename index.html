@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Frogger</title>
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <style>
+    table, th, td {
+        border: 1px solid black;
+    }
+    body {
+      font-size: 20pt;
+    }
+    </style>
+</head>
+<body>
+
+    <div id="board"></div>
+
+    <table align="center" border="1">
+      <tr>
+        <td>
+          <span id="1"> </span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span id="2"> </span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span id="3"> </span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span id="4"> </span>
+        </td>
+      </tr>
+    </table>
+
+    <button onClick="drawPlayer();">Draw Player</button>
+    <button onClick="drawBoard();">Draw Game</button>
+    <button onClick="resetBoard();">Reset Board</button>
+    <button onClick="printBoard();">Print Board</button>
+    <button onClick="gameEnd();">Game End</button>
+
+    <!--    <script src="./resources.js"></script> -->
+        <script src="./board.js"></script>
+        <script src="./app.js"></script>
+    <!--    <script src="./engine.js"></script> -->
+</body>
+</html>

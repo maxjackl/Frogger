@@ -1,0 +1,38 @@
+table {
+    border-collapse: collapse;
+    font-family: 'Indie Flower', cursive;
+    font-size: 50pt;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+td {
+  width: 30px;
+  height: 30px;
+}
+td:hover {background-color: #F5CE28;
+}
+td {
+height: 100px;
+width: 100px;
+vertical-align: middle;
+align-content: center;
+}
+
+body {
+background-color: #F2EEE2;
+text-align:center;
+
+margin-top: 4cm;
+font-family: monospace;
+}
+.small {
+font-size: 12pt;
+}
+.x {
+color: #F81884;
+}
+.o {
+color: #43C0F6;
+}
