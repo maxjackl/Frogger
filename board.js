@@ -6,19 +6,8 @@ String.prototype.replaceAt = function(index, character) {
 let boardAr = ['_______________', '_______________', '_______________',
             '_______________'];
 
-let gameOn = true;
-
-function gameEngine() {
-  while (gameOn) {
-    setInterval(drawScreen, 1000);
-  }
-}
 
 
-var player = {
-  icon : '*',
-  position : [3, 0]
-};
 
 function drawBoard() {
   document.getElementById("1").innerHTML = boardAr[0];
@@ -27,54 +16,36 @@ function drawBoard() {
   document.getElementById("4").innerHTML = boardAr[3];
 };
 
-function moveLeft() {
-  if (player.position[1] > 0) {
-    player.position[1] --;
-    console.log("moved left");
-  } else {
-    console.log("too far left");
-  }
-  console.log(player.position);
-};
-
-function moveDown() {
-  if (player.position[0] < 3) {
-    player.position[0] ++;
-    console.log("moved down");
-  } else {
-    console.log("too far down");
-  }
-  console.log(player.position);
-};
-
-function moveRight() {
-  if (player.position[1] < 14) {
-    player.position[1] ++;
-    console.log("moved right");
-  } else {
-    console.log("too far right");
-  }
-  console.log(player.position);
-};
-
-function moveUp() {
-  if (player.position[0] > 0) {
-    player.position[0] --;
-    console.log("moved up");
-  } else {
-    console.log("too far up");
-  }
-  console.log(player.position);
-};
 
 function drawPlayer() {
   resetBoard()
   boardAr[player.position[0]] = boardAr[player.position[0]].replaceAt(player.position[1], player.icon);
 }
 
+function drawMonsters() {
+  for (let i = 0; i < monstersArray.length; i++) {
+    boardAr[monstersArray[i].position[0]] =
+      boardAr[monstersArray[i].position[0]].replaceAt(monstersArray[i].position[1], monstersArray[i].icon);
+
+  }
+}
+
+
+
 function printBoard() {
   console.log(boardAr);
-}
+};
+
+function printPlayerLocation() {
+  console.log(player.position);
+};
+
+function printMonsterLocation() {
+  console.log(monster1.position);
+  console.log(monster2.position);
+};
+
+
 
 function resetBoard() {
   boardAr = ['_______________', '_______________', '_______________',
@@ -82,14 +53,9 @@ function resetBoard() {
 }
 
 function drawScreen() {
+  drawPlayer();
+  moveMonsters();
+  drawMonsters();
+  checkLoosing();
   drawBoard();
 }
-
-function gameEnd() {
-  gameOn = false;
-}
-
-//drawPlayer();
-console.log(boardAr[3]);
-gameEngine();
-console.log(boardAr[3]);

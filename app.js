@@ -15,3 +15,13 @@ function checkKeyPressed(e) {
         moveUp();
     }
 }
+
+
+
+function mainLoop() {
+    drawScreen();
+    requestAnimationFrame(mainLoop);
+}
+
+// Start things off
+requestAnimationFrame(mainLoop);

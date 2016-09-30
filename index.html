@@ -10,6 +10,19 @@
     }
     body {
       font-size: 20pt;
+      font-family: monospace;
+    }
+    p {
+      font-size: 12pt;
+    }
+    #controlls {
+      width: 60%;
+      align-content: left;
+    }
+    #success {
+      width: 40%;
+      color: red;
+      align-content: right;
     }
     </style>
 </head>
@@ -39,16 +52,29 @@
         </td>
       </tr>
     </table>
-
-    <button onClick="drawPlayer();">Draw Player</button>
-    <button onClick="drawBoard();">Draw Game</button>
+<!--
+    <button onClick="printPlayerLocation();">printPlayerLocation</button>
+    <button onClick="printMonsterLocation();">printMonsterLocation</button>
     <button onClick="resetBoard();">Reset Board</button>
     <button onClick="printBoard();">Print Board</button>
     <button onClick="gameEnd();">Game End</button>
+-->
+<div id="controlls"><p>Controlls:
+<br>
+a - left
+s - down
+d - right
+w - up</p>
+</div>
+<div id="success">
+
+</div>
 
     <!--    <script src="./resources.js"></script> -->
         <script src="./board.js"></script>
         <script src="./app.js"></script>
+        <script src="./engine.js"></script>
+        <script src="./logic.js"></script>
     <!--    <script src="./engine.js"></script> -->
 </body>
 </html>
