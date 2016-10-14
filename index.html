@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Frogger</title>
-    <!-- <link rel="stylesheet" href="css/style.css"> -->
+      <!-- <link rel="stylesheet" href="css/style.css"> -->
     <style>
     table, th, td {
         border: 1px solid black;
     }
     body {
-      font-size: 20pt;
+      font-size: 10pt;
       font-family: monospace;
+    }
+    table {
+      font-size: 20pt;
     }
     p {
       font-size: 12pt;
@@ -25,6 +28,13 @@
       align-content: right;
     }
     </style>
+
+        <!--    <script src="./resources.js"></script> -->
+            <script src="./board.js"></script>
+            <script src="./app.js"></script>
+            <script src="./engine.js"></script>
+            <script src="./logic.js"></script>
+        <!--    <script src="./engine.js"></script> -->
 </head>
 <body>
 
@@ -66,15 +76,18 @@ s - down
 d - right
 w - up</p>
 </div>
+<div id="difficultyLevel">
+  Difficulty Lever:
+  <form class="small">
+    <input type="radio" name="difficultyLevel" value="1" checked onchange="difficultyLevel = 1;" checked> 1
+    <input type="radio" name="difficultyLevel" value="2" checked onchange="difficultyLevel = 2"> 2
+    <input type="radio" name="difficultyLevel" value="3" checked onchange="difficultyLevel = 3;"> 3
+    <input type="radio" name="difficultyLevel" value="4" checked onchange="difficultyLevel = 4;"> 4
+  </form>
+</div>
 <div id="success">
 
 </div>
 
-    <!--    <script src="./resources.js"></script> -->
-        <script src="./board.js"></script>
-        <script src="./app.js"></script>
-        <script src="./engine.js"></script>
-        <script src="./logic.js"></script>
-    <!--    <script src="./engine.js"></script> -->
 </body>
 </html>
