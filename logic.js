@@ -9,23 +9,29 @@ var Monster = function(speed, icon, position) {
   this.position = position;
 }
 
-  var monstersArray = [];
-  monstersArray.push(new Monster(0.12, "&", [0, 0]));
-  monstersArray.push(new Monster(0.3, "^", [1, 0]));
-  monstersArray.push(new Monster(0.22, "$", [2, 0]));
-  monstersArray.push(new Monster(0.45, "#", [0, 0]));
+var monstersArray = [];
+monstersArray.push(new Monster(0.12, "&", [0, 0]));
+monstersArray.push(new Monster(0.3, "^", [1, 0]));
+monstersArray.push(new Monster(0.22, "$", [2, 0]));
+monstersArray.push(new Monster(0.45, "#", [0, 0]));
 
 
 var difficultyLevel = 1;
 
-createMonsters(difficultyLevel);
+// variable that is describes a relation
+var difficultyChan = 0.3;
+
+function setDifficulty(diff) {
+  difficultyLevel = diff;
+}
 
 function moveMonsters(){
   for (let i=0; i < monstersArray.length; i++) {
     if (monstersArray[i].position[1] >= 14) {
       monstersArray[i].position[1] = 0;
     } else {
-      monstersArray[i].position[1] += (monstersArray[i].speed * difficultyLevel);
+      monstersArray[i].position[1] += (monstersArray[i].speed * (difficultyChan * difficultyLevel));
+      //console.log(monstersArray[i].speed * difficultyLevel);
     }
   }
 
@@ -77,11 +83,11 @@ function checkLoosing() {
   for (let i = 0; i < monstersArray.length; i++) {
     let monsterPosTemp = JSON.parse(JSON.stringify(monstersArray[i].position));
     monsterPosTemp[1] = parseInt(monsterPosTemp[1].toFixed(0));
-    console.log("Temp" + i + " monster position: " + monsterPosTemp);
+    //console.log("Temp" + i + " monster position: " + monsterPosTemp);
 
 
     if (JSON.stringify(player.position) === JSON.stringify(monsterPosTemp)) {
-        console.log("you lost");
+        //console.log("you lost");
         document.getElementById("success").innerHTML = "<p>You were eaten!</p>";
         player.position = [3, 0];
       }
